@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+      <title>Générateur de mot de passe</title>
+    </head>
+    <body>
+      <h2>Générateur de mot de passe</h2>
+      <button onclick="genererMotDePasse()">Générer</button>
+      <p id="resultat"></p>
+    
+      <script>
+        function genererMotDePasse(longueur = 10) {
+          const caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+          let motDePasse = "";
+          for (let i = 0; i < longueur; i++) {
+            const index = Math.floor(Math.random() * caracteres.length);
+            motDePasse += caracteres[index];
+          }
+          document.getElementById("resultat").textContent = "Mot de passe : " + motDePasse;
+        }
+      </script>
+    </body>
+    </html>
